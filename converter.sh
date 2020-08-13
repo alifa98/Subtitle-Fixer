@@ -20,6 +20,6 @@ fi
 for  file  in  *.srt; do
 	FROM_ENCODING=`uchardet "$file" `
 	CONVERT=" iconv  -f   $FROM_ENCODING  -t   $TO_ENCODING"
-     	$CONVERT   "$file"   -o  "./converted/${file}[utf8].srt"
+     	$CONVERT   "$file"   -o  "./converted/${file%.srt}[utf8].srt"
 done
 exit 0
